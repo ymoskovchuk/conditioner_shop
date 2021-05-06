@@ -40,6 +40,90 @@ class Product(models.Model):
         return self.__class__.__name__.lower()
 
 
+class Conditioner(Product):
+
+    cold_efficiency = models.CharField(max_length=255, verbose_name='Продуктивність холод, кВт')
+    warm_efficiency = models.CharField(max_length=255, verbose_name='Продуктивність тепло, кВт')
+    cold_watt_consumption = models.CharField(max_length=255, verbose_name='Споживання потужності холод, кВт')
+    warm_watt_consumption = models.CharField(max_length=255, verbose_name='Споживання потужності тепло, кВт')
+    recommended_area = models.PositiveIntegerField(verbose_name='Рекомендована площа приміщення, м²')
+    invertor = models.BooleanField(default=False, verbose_name='Інвертор')
+    energy_efficiency = models.CharField(max_length=255, verbose_name='Енергоефективність EER/C.O.P.,кВт/кВт')
+    liquid_tube_diameter = models.CharField(max_length=255, verbose_name='Діаметер рідинної труби, мм')
+    gas_tube_diameter = models.CharField(max_length=255, verbose_name='Діаметер газової труби, мм')
+    max_magistral_length = models.PositiveIntegerField(verbose_name='Максимальна довжина магістралі, м')
+    max_magistral_hight_variation = models.PositiveIntegerField(verbose_name='Максимальний перепад висоти магістралі, м')
+    cold_work_temratures = models.CharField(max_length=255, verbose_name='Діапазон роботи на холод,°C')
+    warm_work_temratures = models.CharField(max_length=255, verbose_name='Діапазон роботи на тепло,°C')
+    freon = models.CharField(max_length=255, verbose_name='Фреон')
+    energy_source = models.CharField(max_length=255, verbose_name='Джерело живлення')
+    warrant = models.CharField(max_length=255, verbose_name='Гарантія')
+    manufacturer = models.CharField(max_length=255, verbose_name='Виробник')
+
+    dims = models.CharField(max_length=255, verbose_name='Габаритні розміри, мм')
+    weight = models.CharField(max_length=255, verbose_name='Вага, кг')
+    noise = models.CharField(max_length=255, verbose_name='Рівень шуму,дБ(А)(мин/ср/макс)')
+    air_consumption = models.PositiveIntegerField(verbose_name='Споживання повітря, м³/год. ')
+    filter = models.CharField(max_length=255, verbose_name='Фільтр')
+    color = models.CharField(max_length=255, verbose_name='Колір')
+
+    outer_dims = models.CharField(max_length=255, verbose_name='Габаритні розміри, мм')
+    outer_weight = models.CharField(max_length=255, verbose_name='Вага, кг')
+    outer_noise = models.CharField(max_length=255, verbose_name='Рівень шуму,дБ(А)(мин/ср/макс)')
+    outer_distance_between_bases = models.CharField(max_length=255, verbose_name='Відстань між лапами, мм')
+    compressor_type = models.CharField(max_length=255, verbose_name='Тип компресора')
+
+    def __str__(self):
+        return "{} : {}".format(self.category.name, self.title)
+
+    def get_absolute_url(self):
+        return get_product_url(self, 'product_detail')
+
+
+class Invertor(Product):
+
+    cold_efficiency = models.CharField(max_length=255, verbose_name='Продуктивність холод, кВт')
+    warm_efficiency = models.CharField(max_length=255, verbose_name='Продуктивність тепло, кВт')
+    cold_watt_consumption = models.CharField(max_length=255, verbose_name='Споживання потужності холод, кВт')
+    warm_watt_consumption = models.CharField(max_length=255, verbose_name='Споживання потужності тепло, кВт')
+    recommended_area = models.PositiveIntegerField(verbose_name='Рекомендована площа приміщення, м²')
+    invertor = models.BooleanField(default=False, verbose_name='Інвертор')
+    energy_efficiency = models.CharField(max_length=255, verbose_name='Енергоефективність EER/C.O.P.,кВт/кВт')
+    liquid_tube_diameter = models.CharField(max_length=255, verbose_name='Діаметер рідинної труби, мм')
+    gas_tube_diameter = models.CharField(max_length=255, verbose_name='Діаметер газової труби, мм')
+    max_magistral_length = models.PositiveIntegerField(verbose_name='Максимальна довжина магістралі, м')
+    max_magistral_hight_variation = models.PositiveIntegerField(verbose_name='Максимальний перепад висоти магістралі, м')
+    cold_work_temratures = models.CharField(max_length=255, verbose_name='Діапазон роботи на холод,°C')
+    warm_work_temratures = models.CharField(max_length=255, verbose_name='Діапазон роботи на тепло,°C')
+    freon = models.CharField(max_length=255, verbose_name='Фреон')
+    energy_source = models.CharField(max_length=255, verbose_name='Джерело живлення')
+    warrant = models.CharField(max_length=255, verbose_name='Гарантія')
+    manufacturer = models.CharField(max_length=255, verbose_name='Виробник')
+
+    dims = models.CharField(max_length=255, verbose_name='Габаритні розміри, мм')
+    weight = models.CharField(max_length=255, verbose_name='Вага, кг')
+    noise = models.CharField(max_length=255, verbose_name='Рівень шуму,дБ(А)(мин/ср/макс)')
+    air_consumption = models.PositiveIntegerField(verbose_name='Споживання повітря, м³/год. ')
+    filter = models.CharField(max_length=255, verbose_name='Фільтр')
+    color = models.CharField(max_length=255, verbose_name='Колір')
+
+    outer_dims = models.CharField(max_length=255, verbose_name='Габаритні розміри, мм')
+    outer_weight = models.CharField(max_length=255, verbose_name='Вага, кг')
+    outer_noise = models.CharField(max_length=255, verbose_name='Рівень шуму,дБ(А)(мин/ср/макс)')
+    outer_distance_between_bases = models.CharField(max_length=255, verbose_name='Відстань між лапами, мм')
+    compressor_type = models.CharField(max_length=255, verbose_name='Тип компресора')
+
+    def __str__(self):
+        return "{} : {}".format(self.category.name, self.title)
+
+    def get_absolute_url(self):
+        return get_product_url(self, 'product_detail')
+
+
+class Installation:
+    pass
+
+
 class CartProduct(models.Model):
 
     user = models.ForeignKey('Customer', verbose_name='Покупець', on_delete=models.CASCADE)
