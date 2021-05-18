@@ -14,7 +14,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#!">Start Bootstrap</a>
+                <a class="navbar-brand" href="#!">LOGO</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
@@ -24,8 +24,9 @@
                                 <span class="sr-only">(current)</span>
                             </a>
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#!">Про нас</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Установка</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Оплата та доставка</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#!">Сервіс</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Контакти</a></li>
                     </ul>
                 </div>
@@ -43,6 +44,7 @@
                     </div>
                 </div>
                 <div class="col-lg-9">
+                    {% block content %}
                     <div class="carousel slide my-4" id="carouselExampleIndicators" data-ride="carousel">
                         <ol class="carousel-indicators">
                             <li class="active" data-target="#carouselExampleIndicators" data-slide-to="0"></li>
@@ -131,6 +133,7 @@
                             </div>
                         </div>
                     </div>
+                {% endblock content %}
                 </div>
             </div>
         </div>

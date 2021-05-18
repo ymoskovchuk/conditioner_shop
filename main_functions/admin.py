@@ -4,7 +4,20 @@ from django.contrib import admin
 from .models import *
 
 
+class ConditionerAdminForm(ModelForm):
+
+    MIN_RESOLUTION = (700, 400)
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields['image'].help_text = 'Завантажуйте зображення з мінімальними розмірами {}x{}'.format(
+            *self.MIN_RESOLUTION
+        )
+
+
 class ConditionerAdmin(admin.ModelAdmin):
+
+    form = ConditionerAdminForm
 
     def formfield_for_foreignkey(self, db_field, request, **kwargs):
         if db_field.name == 'category':

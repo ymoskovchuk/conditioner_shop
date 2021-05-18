@@ -8,6 +8,11 @@ from django.utils import timezone
 User = get_user_model()
 
 
+def get_product_url(obj, viewname):
+    ct_model = obj.__class__._meta.model_name
+    return reverse(viewname, kwargs={'ct_model': ct_model, 'slug': obj.slug})
+
+
 class LatestProductsManager:
 
     @staticmethod
