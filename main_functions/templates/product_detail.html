@@ -18,9 +18,10 @@
         <h3>{{ product.title }}</h3>
         <h5>Ціна: {{ product.price }} грн.</h5>
         <p>Опис: {{ product.description }}</p>
-        <h5 class="mt-4">Характеристики:</h5>
 
     </div>
+    <h5 class="mt-4">Характеристики:</h5>
+    {% include 'conditioner_specs.html' %}
 </div>
 
 {% endblock content %}

@@ -6,5 +6,139 @@
 </head>
 <body>
 
+<table class="table">
+
+<!-- ////////////////////  Основний блок //////////////////// -->
+<tr class="table-primary">
+  <td><b>Основні</b></td>
+    <td></td>
+</tr>
+    <tr>
+  <td>Продуктивність холод, кВт</td>
+  <td>{{ product.cold_efficiency }}</td>
+    </tr>
+    <tr>
+  <td>Продуктивність тепло, кВт</td>
+  <td>{{ product.warm_efficiency }}</td>
+    </tr>
+    <tr>
+  <td>Споживання потужності холод, кВт</td>
+  <td>{{ product.cold_watt_consumption }}</td>
+    </tr>
+    <tr>
+  <td>Споживання потужності тепло, кВт</td>
+  <td>{{ product.warm_watt_consumption }}</td>
+    </tr>
+    <tr>
+  <td>Рекомендована площа приміщення, м²</td>
+  <td>{{ product.recommended_area }}</td>
+    </tr>
+    <tr>
+  <td>Інвертор</td>
+  <td>{{ product.invertor }}</td>
+    </tr>
+    <tr>
+  <td>Енергоефективність EER/C.O.P.,кВт/кВт</td>
+  <td>{{ product.energy_efficiency }}</td>
+    </tr>
+    <tr>
+  <td>Діаметер рідинної труби, мм</td>
+  <td>{{ product.liquid_tube_diameter }}</td>
+    </tr>
+    <tr>
+  <td>Діаметер газової труби, мм</td>
+  <td>{{ product.gas_tube_diameter }}</td>
+    </tr>
+    <tr>
+  <td>Максимальна довжина магістралі, м</td>
+  <td>{{ product.max_magistral_length }}</td>
+    </tr>
+    <tr>
+  <td>Максимальний перепад висоти магістралі, м</td>
+  <td>{{ product.max_magistral_hight_variation }}</td>
+    </tr>
+    <tr>
+  <td>Діапазон роботи на холод,°C</td>
+  <td>{{ product.cold_work_temratures }}</td>
+    </tr>
+    <tr>
+  <td>Діапазон роботи на тепло,°C</td>
+  <td>{{ product.warm_work_temratures }}</td>
+    </tr>
+    <tr>
+  <td>Фреон</td>
+  <td>{{ product.freon }}</td>
+    </tr>
+    <tr>
+  <td>Джерело живлення</td>
+  <td>{{ product.energy_source }}</td>
+    </tr>
+    <tr>
+  <td>Гарантія</td>
+  <td>{{ product.warrant }}</td>
+    </tr>
+    <tr>
+  <td>Виробник</td>
+  <td>{{ product.manufacturer }}</td>
+    </tr>
+<!-- ////////////////////  Внутрішній блок //////////////////// -->
+
+  <tr class="table-primary">
+  <td><b>Внутрішній блок</b></td>
+    <td></td>
+</tr>
+      <tr>
+  <td>Габаритні розміри, мм</td>
+  <td>{{ product.dims }}</td>
+    </tr>
+        <tr>
+  <td>Вага, кг</td>
+  <td>{{ product.weight }}</td>
+    </tr>
+        <tr>
+  <td>Рівень шуму,дБ(А)(мин/ср/макс)</td>
+  <td>{{ product.noise }}</td>
+    </tr>
+        <tr>
+  <td>Споживання повітря, м³/год.</td>
+  <td>{{ product.air_consumption }}</td>
+    </tr>
+        <tr>
+  <td>Фільтр</td>
+  <td>{{ product.filter }}</td>
+    </tr>
+    <tr>
+  <td>Колір</td>
+  <td>{{ product.color }}</td>
+    </tr>
+<!-- ////////////////////  Зовнішній блок //////////////////// -->
+
+<tr class="table-primary">
+    <td><b>Зовнішній блок</b></td>
+    <td></td>
+</tr>
+    <tr>
+  <td>Габаритні розміри, мм</td>
+  <td>{{ product.outer_dims }}</td>
+    </tr>
+    <tr>
+  <td>Вага, кг</td>
+  <td>{{ product.outer_weight }}</td>
+    </tr>
+    <tr>
+  <td>Рівень шуму,дБ(А)(мин/ср/макс</td>
+  <td>{{ product.outer_noise }}</td>
+    </tr>
+    <tr>
+  <td>Відстань між лапами, мм</td>
+  <td>{{ product.outer_distance_between_bases }}</td>
+    </tr>
+    <tr>
+  <td>Тип компресора</td>
+  <td>{{ product.compressor_type }}</td>
+    </tr>
+
+</table>
+
 </body>
 </html>
