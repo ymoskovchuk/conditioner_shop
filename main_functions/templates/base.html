@@ -38,8 +38,9 @@
                 <div class="col-lg-3">
                     <h1 class="my-4">Кондиціонери</h1>
                     <div class="list-group">
-                        <a class="list-group-item" href="#!">Кондиціонери</a>
-                        <a class="list-group-item" href="#!">Інверторні</a>
+                        {% for category in categories %}
+                        <a class="list-group-item" href="#!">{{ category.name }} ({{ category.count }})</a>
+                        {% endfor %}
 <!--                        <a class="list-group-item" href="#!">Category 3</a>-->
                     </div>
                 </div>
