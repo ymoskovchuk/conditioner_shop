@@ -18,7 +18,8 @@
         <h3>{{ product.title }}</h3>
         <h5>Ціна: {{ product.price }} грн.</h5>
         <p>Опис: {{ product.description }}</p>
-
+        <hr>
+        <a href="{% url 'add_to_cart' ct_model=ct_model slug=product.slug %}"><button class="btn btn-danger"> В корзину </button> </a>
     </div>
     <h5 class="mt-4">Характеристики:</h5>
     {% include 'conditioner_specs.html' %}
