@@ -164,7 +164,7 @@ class Invertor(Product):
     outer_dims = models.CharField(max_length=255, verbose_name='Габаритні розміри, мм')
     outer_weight = models.CharField(max_length=255, verbose_name='Вага, кг')
     outer_noise = models.CharField(max_length=255, verbose_name='Рівень шуму,дБ(А)(мин/ср/макс)')
-    outer_distance_between_bases = models.CharField(max_length=255, verbose_name='Відстань між лапами, мм')
+    outer_distance_between_bases = models.CharField(max_length=255, verbose_name='Відстань між лапами, мм', null=True, blank=True)
     compressor_type = models.CharField(max_length=255, verbose_name='Тип компресора')
 
     def __str__(self):
@@ -242,8 +242,8 @@ class Order(models.Model):
         (BUYING_TYPE_DELIVERY, 'Доставка')
     )
 
-    customer = models.ForeignKey(Customer, verbose_name='Покупець', related_name='related_orders', on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=255, verbose_name='Ім\'я')
+    customer = models.ForeignKey(Customer, verbose_name='Покупець', related_name='related_orders', on_delete=models.CASCADE, null=True, blank=True)
+    first_name = models.CharField(max_length=255, verbose_name="Ім'я")
     last_name = models.CharField(max_length=255, verbose_name='Прізвище')
     phone = models.CharField(max_length=20, verbose_name='Телефон')
     cart = models.ForeignKey(Cart, verbose_name='Корзина', on_delete=models.CASCADE, null=True, blank=True)
@@ -261,7 +261,7 @@ class Order(models.Model):
         default=BUYING_TYPE_SELF
     )
     comment = models.TextField(verbose_name='Коментар до замовлення', null=True, blank=True)
-    created_at = models.DateTimeField(auto_now=timezone.now, verbose_name='Дата створення замовлення')
+    created_at = models.DateTimeField(auto_now=True, verbose_name='Дата створення замовлення')
     order_date = models.DateField(verbose_name='Дата отримання замовлення', default=timezone.now)
 
     def __str__(self):

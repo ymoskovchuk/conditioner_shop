@@ -138,7 +138,7 @@ class CheckoutView(CartMixin, View):
 
 class MakeOrderView(CartMixin, View):
 
-    @transaction.atomic
+    # @transaction.atomic
     def post(self, request, *args, **kwargs):
         form = OrderForm(request.POST or None)
         customer = Customer.objects.get(user=request.user)
