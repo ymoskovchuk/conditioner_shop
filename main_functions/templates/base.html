@@ -18,11 +18,38 @@
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#!">
-                                Головна
-                            </a>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#!" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Категорії
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            {% for category in categories %}
+                            <a class="dropdown-item" href="{{ category.get_absolute_url }}">{{ category.name }}</a>
+                            {% endfor %}
+                        </div>
                         </li>
+                    {% if not request.user.is_authenticated %}
+                        <li>
+                            <a class="nav-link" href="{% url 'login' %}">Авторизація</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="#!">Реєстрація</a>
+                        </li>
+                    {% endif %}
+                        <li class="nav-item">
+                            {% if request.user.is_authenticated %}
+                            <span class="navbar text">
+                            Доброго дня,
+                                <span class="badge bg-danger">
+                            <a style="text-decoration: none; font-size:14px; color:white;" href="#!">
+                            {{ request.user.username }}
+                            </a>
+                            {% endif %}
+                                </span>
+                            </span>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item active"><a class="nav-link" href="#!">Головна</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Установка</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Оплата та доставка</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">Сервіс</a></li>
