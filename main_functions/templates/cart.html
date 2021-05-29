@@ -27,11 +27,11 @@
   <tbody>
   {% for item in cart.products.all %}
     <tr>
-      <th scope="row">{{ item.content_object.title }}</th>
-      <td class="w-25"><img src="{{ item.content_object.image.url }}" class="img-fluid"></td>
-      <td>{{ item.content_object.price }} грн.</td>
+      <th scope="row">{{ item.product.title }}</th>
+      <td class="w-25"><img src="{{ item.product.image.url }}" class="img-fluid"></td>
+      <td>{{ item.product.price }} грн.</td>
       <td>
-        <form action="{% url 'change_qty' ct_model=item.content_object.get_model_name slug=item.content_object.slug %}" METHOD="POST">
+        <form action="{% url 'change_qty' slug=item.product.slug %}" METHOD="POST">
           {% csrf_token %}
           <input type="number" class="form-control" name="qty" style="width: 60px;" min="1" value="{{ item.qty }}">
           <br>
@@ -39,7 +39,7 @@
         </form>
       </td>
       <td>{{ item.final_price }} грн.</td>
-      <td><a href="{% url 'delete_from_cart' ct_model=item.content_object.get_model_name slug=item.content_object.slug %}">
+      <td><a href="{% url 'delete_from_cart' slug=item.product.slug %}">
         <button class="btn btn-danger"> Видалити </button> </a>
       </td>
     </tr>

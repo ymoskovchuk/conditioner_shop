@@ -21,8 +21,6 @@
         <hr>
         <a href="{% url 'add_to_cart' ct_model=ct_model slug=product.slug %}"><button class="btn btn-danger"> В корзину </button> </a>
     </div>
-    <h5 class="mt-4">Характеристики:</h5>
-    {% include 'conditioner_specs.html' %}
 </div>
 
 {% endblock content %}

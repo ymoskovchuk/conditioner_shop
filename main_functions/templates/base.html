@@ -38,10 +38,6 @@
                 <div class="col-lg-3">
                     <h1 class="my-4">Кондиціонери</h1>
                     <div class="list-group">
-                        {% for category in categories %}
-                        <a class="list-group-item" href="{{ category.url }}">{{ category.name }} ({{ category.count }})</a>
-                        {% endfor %}
-<!--                        <a class="list-group-item" href="#!">Category 3</a>-->
                     </div>
                 </div>
                 <div class="col-lg-9">
@@ -84,7 +80,7 @@
                                     <h4 class="card-title">
                                         <a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h4>
                                     <h5>{{ product.price }} грн.</h5>
-                                    <a href="{% url 'add_to_cart' ct_model=product.get_model_name slug=product.slug %}">
+                                    <a href="{% url 'add_to_cart' slug=product.slug %}">
                                         <button class="btn btn-danger">В корзину</button>
                                     </a>
                                 </div>
