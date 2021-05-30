@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<h3 class="mt-3 mb-3">Замовлення користувача {{ request.user.username }}</h3>
+{% if not orders.count %}
+<div class="col-md-12" style="margin-top: 300px; margin-bottom: 300px;">
+    <h3> У вас ще немає замовлень. <a href="{% url 'base' %}">Зробіть покупку</a> </h3>
+</div>
+{% else %}
+<div class="col-md-12" style="margin-top: 250px; margin-bottom: 250px;">
+    <table class="table">
+        <thead>
+        <th scope="col">Номер</th>
+        <th scope="col">Статус</th>
+        <th scope="col">Сума</th>
+        <th scope="col">Товар</th>
+        <th scope="col">Додатково</th>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+                <tr>
+                    <th scope="row">{{ order.id }}</th>
+                    <td>{{ order.get_status_display }}</td>
+                    <td>{{ order.cart.final_price }} грн.</td>
+                    <td>
+                        <ul>
+                            {% for item in order.cart.products.all %}
+                            <li>{{ item.product.title }} x {{ item.qty }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <button class="btn btn-info" data-toggle="modal" data-target="#exampleModal-{{ order.id }}">Детальніше</button>
+                        <div class="modal fade" id="exampleModal-{{ order.id }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Деталізація замовлення</h5>
+                                <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
+                              </div>
+                              <div class="modal-body">
+                                <h4 class="text-center">Товар</h4>
+                                  <table class="table">
+                                      <thead>
+                                        <tr>
+                                            <th scope="col">Назва</th>
+                                            <th scope="col">Зображення</th>
+                                            <th scope="col">Ціна</th>
+                                            <th scope="col">Кількість</th>
+                                            <th scope="col">Загальна вартість</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        {% for item in order.cart.products.all %}
+                                            <tr>
+                                                <th scope="row">{{ item.product.title }}</th>
+                                                <td class="w-25"><img src="{{ item.product.image.url }}" class="img-fluid"> </td>
+                                                <td><strong>{{ item.product.price }}</strong> грн. </td>
+                                                <td>{{ item.qty }}</td>
+                                                <td>{{ item.final_price }} грн.</td>
+                                            </tr>
+                                        {% endfor %}
+                                            <tr>
+                                                <td colspan="2"></td>
+                                                <td>Всього:</td>
+                                                <td>{{ order.cart.total_products }}</td>
+                                                <td><strong>{{ order.cart.final_price }}</strong> грн.</td>
+                                            </tr>
+                                      </tbody>
+                                  </table>
+                                    <hr>
+                                    <h4 class="text-center">Додаткова інформація</h4>
+                                    <p>Ім'я: <strong>{{ order.first_name }}</strong></p>
+                                    <p>Прізвище: <strong>{{ order.last_name }}</strong></p>
+                                    <p>Телефон: <strong>{{ order.customer.phone }}</strong></p>
+                              </div>
+                              <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрити</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endif %}
+{% endblock %}

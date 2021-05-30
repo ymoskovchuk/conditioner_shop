@@ -32,7 +32,7 @@
                             <a class="nav-link" href="{% url 'login' %}">Авторизація</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="#!">Реєстрація</a>
+                            <a class="nav-link" href="{% url 'registration' %}">Реєстрація</a>
                         </li>
                     {% endif %}
                         <li class="nav-item">
@@ -40,10 +40,10 @@
                             <span class="navbar text">
                             Доброго дня,
                                 <span class="badge bg-danger">
-                            <a style="text-decoration: none; font-size:14px; color:white;" href="#!">
+                            <a style="text-decoration: none; font-size:14px; color:white;" href="{% url 'profile' %}">
                             {{ request.user.username }}
                             </a>
-                            {% endif %}
+                            | <a href="{% url 'logout' %}"> Вийти </a>  {% endif %}
                                 </span>
                             </span>
                         </li>
