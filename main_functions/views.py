@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect
 from django.views.generic import DetailView, View
 
 from .models import Category, Customer, Order, CartProduct, Product
-from .mixins import CartMixin
+from .mixins import *
 from .forms import OrderForm, LoginForm, RegistrationForm
 from .utils import recalc_cart
 
@@ -27,9 +27,11 @@ class BaseView(CartMixin, View):
 
 class ProductDetailView(CartMixin, DetailView):
 
+    category = Product.category
     context_object_name = 'product'
     template_name = 'product_detail.html'
     slug_url_kwarg = 'slug'
+    queryset = Product.objects.all()
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -39,7 +41,6 @@ class ProductDetailView(CartMixin, DetailView):
 
 class CategoryDetailView(CartMixin, DetailView):
 
-    model = Category
     queryset = Category.objects.all()
     context_object_name = 'category'
     template_name = 'category_detail.html'
@@ -48,6 +49,8 @@ class CategoryDetailView(CartMixin, DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['cart'] = self.cart
+        context['category_products'] = Product.objects.all()
+        context['category_slug'] = self.get_object().slug
         return context
 
 

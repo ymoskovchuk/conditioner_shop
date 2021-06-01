@@ -10,6 +10,8 @@
     </nav>
     <div class="row">
         {% for product in category_products %}
+
+            {% if product.category.slug == category.slug %}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
                 <a href="{{ product.get_absolute_url }}"><img class="card-img-top" src="{{ product.image.url }}" alt="" /></a>
@@ -17,11 +19,13 @@
                         <h4 class="card-title">
                         <a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h4>
                         <h5>{{ product.price }} грн.</h5>
-                        <a href="{% url 'add_to_cart' ct_model=product.get_model_name slug=product.slug %}">
+                        <a href="{% url 'add_to_cart' slug=product.slug %}">
                         <button class="btn btn-danger">В корзину</button>
-                     </div>
+                        </a>
+                    </div>
                 </div>
             </div>
+        {% endif %}
+    </div>
         {% endfor %}
-
 {% endblock content %}
