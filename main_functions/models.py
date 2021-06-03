@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from django.urls import reverse
 from django.utils import timezone
 
+from .choices import *
+
 User = get_user_model()
 
 
@@ -26,6 +28,7 @@ class Product(models.Model):
     image = models.ImageField(verbose_name='Зображення')
     description = models.TextField(verbose_name='Опис', null=True)
     price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Ціна')
+    conditioner_type = models.CharField(max_length=255, verbose_name='Тип кондиціонера', choices=CONDITIONER_TYPE_CHOICES, null=True, blank=True)
     brand = models.CharField(max_length=255, verbose_name='Бренд')
     producer = models.CharField(max_length=255, verbose_name='Виробник')
 
@@ -33,8 +36,9 @@ class Product(models.Model):
     warm_efficiency = models.CharField(max_length=255, verbose_name='Продуктивність тепло, кВт')
     cold_watt_consumption = models.CharField(max_length=255, verbose_name='Споживання потужності холод, кВт')
     warm_watt_consumption = models.CharField(max_length=255, verbose_name='Споживання потужності тепло, кВт')
-    recommended_area = models.PositiveIntegerField(verbose_name='Рекомендована площа приміщення, м²')
-    invertor = models.BooleanField(default=False, verbose_name='Інвертор')
+    recommended_area = models.CharField(max_length=255, verbose_name='Рекомендована площа приміщення, м²', choices=AREA_CHOICES)
+    invertor = models.CharField(max_length=255, verbose_name='Інвертор', choices=INVERTOR_CHOICES)
+    invertor_power = models.CharField(max_length=255, verbose_name='Потужність інвертора', choices=INVERTOR_POWER_CHOICES, null=True, blank=True)
     energy_efficiency = models.CharField(max_length=255, verbose_name='Енергоефективність EER/C.O.P.,кВт/кВт')
     liquid_tube_diameter = models.CharField(max_length=255, verbose_name='Діаметер рідинної труби, мм')
     gas_tube_diameter = models.CharField(max_length=255, verbose_name='Діаметер газової труби, мм')
@@ -50,7 +54,7 @@ class Product(models.Model):
     dims = models.CharField(max_length=255, verbose_name='Габаритні розміри, мм')
     weight = models.CharField(max_length=255, verbose_name='Вага, кг')
     noise = models.CharField(max_length=255, verbose_name='Рівень шуму,дБ(А)(мин/ср/макс)')
-    air_consumption = models.PositiveIntegerField(verbose_name='Споживання повітря, м³/год. ')
+    air_consumption = models.CharField(max_length=255, verbose_name='Споживання повітря, м³/год. ')
     filter = models.CharField(max_length=255, verbose_name='Фільтр')
     color = models.CharField(max_length=255, verbose_name='Колір')
 

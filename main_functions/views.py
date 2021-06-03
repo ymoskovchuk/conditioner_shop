@@ -229,3 +229,27 @@ class ProfileView(CartMixin, View):
             'profile.html',
             {'orders': orders, 'cart': self.cart, 'categories': categories}
         )
+
+
+class InstallationView(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(request, template_name='installation.html')
+
+
+class PaymentDeliveryView(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(request, template_name='payment_delivery.html')
+
+
+class ServiceView(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(request, template_name='service.html')
+
+
+class ContactsView(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(request, template_name='contacts.html')
