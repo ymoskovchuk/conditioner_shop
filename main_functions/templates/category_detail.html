@@ -1,19 +1,34 @@
 {% extends 'base.html' %}
-
+{% load bootstrap %}
 
 {% block content %}
-    <nav aria-label="breadcrumb" class="mt-4">
-      <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="{% url 'base' %}">Головна</a></li>
-        <li class="breadcrumb-item active">{{ category.name }}</li>
-      </ol>
-    </nav>
-    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="row">
+                        <div class="col">
+                            <div class=" mt-5 card card-body">
+
+                                <form method="get">
+                                    {{filter.form|bootstrap}}
+
+                                <button class=" mt-2 btn btn-primary" type="submit">Пошук</button>
+                              </form>
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="list-group">
+                    </div>
+                </div>
+                <div class="col-lg-9">
+
         {% for product in category_products %}
 
             {% if product.category.slug == category.slug %}
             <div class="col-lg-4 col-md-6 mb-4">
-                <div class="card h-100">
+                <div class="mt-5 card h-90">
                 <a href="{{ product.get_absolute_url }}"><img class="card-img-top" src="{{ product.image.url }}" alt="" /></a>
                     <div class="card-body">
                         <h4 class="card-title">
@@ -26,6 +41,6 @@
                 </div>
             </div>
             {% endif %}
-    </div>
         {% endfor %}
+                </div>
 {% endblock content %}

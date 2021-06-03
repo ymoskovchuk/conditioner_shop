@@ -26,6 +26,8 @@ class Product(models.Model):
     image = models.ImageField(verbose_name='Зображення')
     description = models.TextField(verbose_name='Опис', null=True)
     price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Ціна')
+    brand = models.CharField(max_length=255, verbose_name='Бренд')
+    producer = models.CharField(max_length=255, verbose_name='Виробник')
 
     cold_efficiency = models.CharField(max_length=255, verbose_name='Продуктивність холод, кВт')
     warm_efficiency = models.CharField(max_length=255, verbose_name='Продуктивність тепло, кВт')

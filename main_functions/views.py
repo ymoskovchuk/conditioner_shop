@@ -1,15 +1,16 @@
-
+import requests
 from django.shortcuts import render
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
-from django.views.generic import DetailView, View
+from django.views.generic import DetailView, View, ListView
 
 from .models import Category, Customer, Order, CartProduct, Product
 from .mixins import *
 from .forms import OrderForm, LoginForm, RegistrationForm
 from .utils import recalc_cart
+from .filters import ProductFilter
 
 
 class BaseView(CartMixin, View):
@@ -42,15 +43,29 @@ class ProductDetailView(CartMixin, DetailView):
 class CategoryDetailView(CartMixin, DetailView):
 
     queryset = Category.objects.all()
+    category_products = Product.objects.all()
     context_object_name = 'category'
     template_name = 'category_detail.html'
     slug_url_kwarg = 'slug'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        productfilter = ProductFilter(self.request.GET, queryset=self.category_products)
+        self.category_products = productfilter.qs
         context['cart'] = self.cart
-        context['category_products'] = Product.objects.all()
+        context['category_products'] = self.category_products
         context['category_slug'] = self.get_object().slug
+        context['filter'] = productfilter
+        return context
+
+
+class CategoryListView(ListView):
+    model = Category
+    template_name = 'category_detail,html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['filter'] = ProductFilter()
         return context
 
 
