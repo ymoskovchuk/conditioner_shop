@@ -29,9 +29,8 @@ class Product(models.Model):
     description = models.TextField(verbose_name='Опис', null=True)
     price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Ціна')
     conditioner_type = models.CharField(max_length=255, verbose_name='Тип кондиціонера', choices=CONDITIONER_TYPE_CHOICES, null=True, blank=True)
-    brand = models.CharField(max_length=255, verbose_name='Бренд')
+    brand = models.CharField(max_length=255, choices=BRAND_CHOICES, verbose_name='Бренд')
     producer = models.CharField(max_length=255, verbose_name='Виробник')
-
     cold_efficiency = models.CharField(max_length=255, verbose_name='Продуктивність холод, кВт')
     warm_efficiency = models.CharField(max_length=255, verbose_name='Продуктивність тепло, кВт')
     cold_watt_consumption = models.CharField(max_length=255, verbose_name='Споживання потужності холод, кВт')

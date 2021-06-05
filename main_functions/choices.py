@@ -32,3 +32,21 @@ AREA_CHOICES = (
     ('до 70', 'до 70'),
     ('> 70', '> 70'),
 )
+
+BRAND_CHOICES = (
+    ('AUX', 'AUX'),
+    ('Cooper&Hunter', 'Cooper&Hunter'),
+    ('Daikin', 'Daikin'),
+    ('Gree', 'Gree'),
+    ('Hitachi', 'Hitachi'),
+    ('Leberg', 'Leberg'),
+    ('LG', 'LG'),
+    ('Mitsubishi Electric', 'Mitsubishi Electric'),
+    ('Mitsubishi Heavy', 'Mitsubishi Heavy'),
+    ('Neoclima', 'Neoclima'),
+    ('Olmo', 'Olmo'),
+    ('Panasonic', 'Panasonic'),
+    ('Samsung', 'Samsung'),
+    ('Smartway', 'Smartway'),
+    ('Toshiba', 'Toshiba'),
+)
