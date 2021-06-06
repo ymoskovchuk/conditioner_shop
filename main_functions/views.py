@@ -21,8 +21,8 @@ def callback_view(request):
     context = {}
     send_mail('Передзвоніть на телефон',
               f'Користувач з телефоном: {phone}  просить передзвонити',
-              'mr.artegornexus@gmail.com',
-              ['mr.artegornexus@gmail.com']
+              'ripka.climat@gmail.com',
+              ['ripka.climat@gmail.com']
               )
     return HttpResponseRedirect('/')
 
@@ -184,8 +184,8 @@ class MakeOrderView(CartMixin, View):
                       f'Дата замовлення - {datetime.datetime.now()}, '
                       f'Товари - {new_order.cart}, '
                       f'Коментар: {new_order.comment}',
-                      'mr.artegornexus@gmail.com',
-                      ['mr.artegornexus@gmail.com'],
+                      'ripka.climat@gmail.com',
+                      ['ripka.climat@gmail.com'],
                       fail_silently=False
                       )
             messages.add_message(request, messages.INFO, f"Дякуємо за замовлення! Ми зв'яжемось з вами")
