@@ -21,4 +21,5 @@ urlpatterns = [
     path('payment_delivery/', PaymentDeliveryView.as_view(), name='payment_delivery'),
     path('service/', ServiceView.as_view(), name='service'),
     path('contacts/', ContactsView.as_view(), name='contacts'),
+    path('callback/', callback_view, name='callback'),
 ]

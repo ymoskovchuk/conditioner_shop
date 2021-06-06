@@ -89,3 +89,6 @@ class RegistrationForm(forms.ModelForm):
         model = User
         fields = ['username', 'password', 'confirm_password', 'first_name', 'last_name', 'address', 'phone', 'email']
 
+
+class CallbackForm(forms.Form):
+    phone = forms.CharField(label='Ваш телефон', max_length=10)

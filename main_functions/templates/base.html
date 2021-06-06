@@ -84,6 +84,34 @@
             </div>
         </nav>
         <!-- Page Content-->
+
+<div class="container">
+    <h5 class="text-end mt-3">Є запитання? Ми зателефонуємо</h5>
+    <div class="col-lg-4 col-md-4 mb-2 ms-auto">
+        <form action="{% url 'callback' %}", method="post"> {% csrf_token %}
+          <div class="input-group mb-2 mt-2">
+            <div class="input-group-prepend">
+              <div class="input-group-text">+38</div>
+            </div>
+            <input type="text" class="form-control" name="phone" placeholder="Ваш номер" style="height: 38px">
+            <button type="submit" class="btn btn-primary mb-2">Зателефонувати</button>
+          </div>
+        </form>
+<!--      <form action ="." method = "post">-->
+<!--          {% csrf_token %}-->
+<!--          <div class="input-group mb-2 mt-2">-->
+<!--            <div class="input-group-prepend">-->
+<!--              <div class="input-group-text">+38</div>-->
+<!--            </div>-->
+<!--            <input type="text" class="form-control" name="phone" placeholder="Ваш номер" style="height: 38px">-->
+<!--            <button type="submit" class="btn btn-primary mb-2">Зателефонувати</button>-->
+<!--          </div>-->
+<!--      </form>-->
+    </div>
+</div>
+
+
+
 {% block content %}
         <div class="container">
 

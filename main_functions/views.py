@@ -5,12 +5,26 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
 from django.views.generic import DetailView, View, ListView
+from django.core.mail import send_mail
+import datetime
 
 from .models import Category, Customer, Order, CartProduct, Product
 from .mixins import *
-from .forms import OrderForm, LoginForm, RegistrationForm
+from .forms import OrderForm, LoginForm, RegistrationForm, CallbackForm
 from .utils import recalc_cart
 from .filters import ProductFilter
+
+
+def callback_view(request):
+
+    phone = request.POST.get('phone')
+    context = {}
+    send_mail('Передзвоніть на телефон',
+              f'Користувач з телефоном: {phone}  просить передзвонити',
+              'mr.artegornexus@gmail.com',
+              ['mr.artegornexus@gmail.com']
+              )
+    return HttpResponseRedirect('/')
 
 
 class BaseView(CartMixin, View):
@@ -161,7 +175,20 @@ class MakeOrderView(CartMixin, View):
             new_order.cart = self.cart
             new_order.save()
             customer.orders.add(new_order)
-            messages.add_message(request, messages.INFO, "Дякуємо за замовлення! Ми зв'яжемось з вами")
+            send_mail(f'Нове замовлення #{new_order.id}',
+                      f'Ім*я - {new_order.first_name}, '
+                      f'Прізвище - {new_order.last_name}, '
+                      f'Номер телефону - {new_order.phone}, '
+                      f'Адреса - {new_order.address}, '
+                      f'Тип замовлення - {new_order.buying_type}, '
+                      f'Дата замовлення - {datetime.datetime.now()}, '
+                      f'Товари - {new_order.cart}, '
+                      f'Коментар: {new_order.comment}',
+                      'mr.artegornexus@gmail.com',
+                      ['mr.artegornexus@gmail.com'],
+                      fail_silently=False
+                      )
+            messages.add_message(request, messages.INFO, f"Дякуємо за замовлення! Ми зв'яжемось з вами")
             return HttpResponseRedirect('/')
         return HttpResponseRedirect('/checkout/')
 

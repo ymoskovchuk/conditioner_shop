@@ -3,6 +3,7 @@
 
 {% block content %}
 <h3 class="text-center mt-5 mb-5">Оформлення замовлення</h3>
+<div class="container">
 <table class="table">
   <thead>
     <tr>
@@ -16,9 +17,9 @@
   <tbody>
     {% for item in cart.products.all %}
         <tr>
-          <th scope="row">{{ item.content_object.title }}</th>
-          <td class="w-25"><img src="{{ item.content_object.image.url }}" class="img-fluid"></td>
-          <td>{{ item.content_object.price }} грн.</td>
+          <th scope="row">{{ item.title }}</th>
+          <td class="w-25"><img src="{{ item.image.url }}" class="img-fluid"></td>
+          <td>{{ item.price }} грн.</td>
           <td>{{ item.qty }}</td>
             <td>{{ item.final_price }} грн.</td>
         </tr>
@@ -36,6 +37,7 @@
 <form action="{% url 'make_order' %}" method="POST">
   {% csrf_token %}
   {{ form|crispy }}
-  <input type="submit" class="btn btn-success btn-block mb-3" value="Оформити замовлення">
+  <input type="submit" class="btn btn-success btn-block mt-3 mb-3" value="Оформити замовлення">
 </form>
+</div>
 {% endblock content %}
