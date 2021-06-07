@@ -65,9 +65,6 @@ class RegistrationForm(forms.ModelForm):
 
     def clean_email(self):
         email = self.cleaned_data['email']
-        domain = email.split('.')[-1]
-        # if domain in ['com', 'net']:
-        #     raise forms.ValidationError(f'реєстрація домену "{domain}" неможлива')
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError(f'Дана поштова адреса уже зареєстрована в системі')
         return email

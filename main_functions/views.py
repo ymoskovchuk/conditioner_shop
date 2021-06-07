@@ -1,16 +1,16 @@
-import requests
+
 from django.shortcuts import render
 
 from django.contrib import messages
 from django.contrib.auth import authenticate, login
 from django.http import HttpResponseRedirect
-from django.views.generic import DetailView, View, ListView
+from django.views.generic import DetailView, ListView
 from django.core.mail import send_mail
 import datetime
 
-from .models import Category, Customer, Order, CartProduct, Product
+from .models import Category, Order, CartProduct, Product
 from .mixins import *
-from .forms import OrderForm, LoginForm, RegistrationForm, CallbackForm
+from .forms import OrderForm, LoginForm, RegistrationForm
 from .utils import recalc_cart
 from .filters import ProductFilter
 
@@ -155,8 +155,9 @@ class CheckoutView(CartMixin, View):
 
 class MakeOrderView(CartMixin, View):
 
-    # @transaction.atomic
     def post(self, request, *args, **kwargs):
+        customer = Customer.objects.get(user=request.user)
+        products = Order.objects.filter(customer=customer).last().cart.products.all()
         form = OrderForm(request.POST or None)
         customer = Customer.objects.get(user=request.user)
         if form.is_valid():
@@ -182,7 +183,7 @@ class MakeOrderView(CartMixin, View):
                       f'Адреса - {new_order.address}, '
                       f'Тип замовлення - {new_order.buying_type}, '
                       f'Дата замовлення - {datetime.datetime.now()}, '
-                      f'Товари - {new_order.cart}, '
+                      f'Товари - {products}, '
                       f'Коментар: {new_order.comment}',
                       'ripka.climat@gmail.com',
                       ['ripka.climat@gmail.com'],
