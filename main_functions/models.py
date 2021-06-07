@@ -28,6 +28,8 @@ class Product(models.Model):
     image = models.ImageField(verbose_name='Зображення')
     description = models.TextField(verbose_name='Опис', null=True)
     price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='Ціна')
+    for_main_page = models.BooleanField(default=False, verbose_name='Показувати на головній')
+    # основні характеристики
     conditioner_type = models.CharField(max_length=255, verbose_name='Тип кондиціонера', choices=CONDITIONER_TYPE_CHOICES, null=True, blank=True)
     brand = models.CharField(max_length=255, choices=BRAND_CHOICES, verbose_name='Бренд')
     producer = models.CharField(max_length=255, verbose_name='Виробник')
@@ -49,14 +51,14 @@ class Product(models.Model):
     energy_source = models.CharField(max_length=255, verbose_name='Джерело живлення')
     warrant = models.CharField(max_length=255, verbose_name='Гарантія')
     manufacturer = models.CharField(max_length=255, verbose_name='Виробник')
-
+    # внутрішній блок
     dims = models.CharField(max_length=255, verbose_name='Габаритні розміри, мм')
     weight = models.CharField(max_length=255, verbose_name='Вага, кг')
     noise = models.CharField(max_length=255, verbose_name='Рівень шуму,дБ(А)(мин/ср/макс)')
     air_consumption = models.CharField(max_length=255, verbose_name='Споживання повітря, м³/год. ')
     filter = models.CharField(max_length=255, verbose_name='Фільтр')
     color = models.CharField(max_length=255, verbose_name='Колір')
-
+    # зовнішній блок
     outer_dims = models.CharField(max_length=255, verbose_name='Габаритні розміри, мм')
     outer_weight = models.CharField(max_length=255, verbose_name='Вага, кг')
     outer_noise = models.CharField(max_length=255, verbose_name='Рівень шуму,дБ(А)(мин/ср/макс)')
