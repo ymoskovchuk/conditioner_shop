@@ -38,7 +38,7 @@ class Product(models.Model):
     warm_watt_consumption = models.CharField(max_length=255, verbose_name='Споживання потужності тепло, кВт')
     recommended_area = models.CharField(max_length=255, verbose_name='Рекомендована площа приміщення, м²', choices=AREA_CHOICES)
     invertor = models.CharField(max_length=255, verbose_name='Інвертор', choices=INVERTOR_CHOICES)
-    invertor_power = models.CharField(max_length=255, verbose_name='Потужність інвертора', choices=INVERTOR_POWER_CHOICES, null=True, blank=True)
+    # invertor_power = models.CharField(max_length=255, verbose_name='Потужність інвертора', choices=INVERTOR_POWER_CHOICES, null=True, blank=True)
     energy_efficiency = models.CharField(max_length=255, verbose_name='Енергоефективність EER/C.O.P.,кВт/кВт')
     liquid_tube_diameter = models.CharField(max_length=255, verbose_name='Діаметер рідинної труби, мм')
     gas_tube_diameter = models.CharField(max_length=255, verbose_name='Діаметер газової труби, мм')

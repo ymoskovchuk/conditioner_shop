@@ -27,7 +27,6 @@
             <div class="row">
         {% for product in category_products %}
 
-            {% if product.category.slug == category.slug %}
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="mt-5 card h-90 border-light">
                 <a href="{{ product.get_absolute_url }}"><img class="card-img-top" src="{{ product.image.url }}" alt="" /></a>
@@ -41,7 +40,7 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
+
         {% endfor %}
             </div>
         </div>

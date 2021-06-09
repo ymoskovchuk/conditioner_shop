@@ -156,8 +156,7 @@ class CheckoutView(CartMixin, View):
 class MakeOrderView(CartMixin, View):
 
     def post(self, request, *args, **kwargs):
-        customer = Customer.objects.get(user=request.user)
-        products = Order.objects.filter(customer=customer).last().cart.products.all()
+
         form = OrderForm(request.POST or None)
         customer = Customer.objects.get(user=request.user)
         if form.is_valid():
@@ -183,7 +182,7 @@ class MakeOrderView(CartMixin, View):
                       f'Адреса - {new_order.address}, '
                       f'Тип замовлення - {new_order.buying_type}, '
                       f'Дата замовлення - {datetime.datetime.now()}, '
-                      f'Товари - {products}, '
+                      f'Товари - {Order.objects.filter(customer=Customer.objects.get(user=request.user)).last().cart.products.all()}, '
                       f'Коментар: {new_order.comment}',
                       'ripka.climat@gmail.com',
                       ['ripka.climat@gmail.com'],

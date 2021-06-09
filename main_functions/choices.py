@@ -5,13 +5,13 @@ INVERTOR_CHOICES = (
     ('Ні', 'Ні'),
 )
 
-INVERTOR_POWER_CHOICES = (
-    ('7 BTU', '7 BTU'),
-    ('9 BTU', '9 BTU'),
-    ('12 BTU', '12 BTU'),
-    ('18 BTU', '18 BTU'),
-    ('24 BTU', '24 BTU'),
-)
+# INVERTOR_POWER_CHOICES = (
+#     ('7 BTU', '7 BTU'),
+#     ('9 BTU', '9 BTU'),
+#     ('12 BTU', '12 BTU'),
+#     ('18 BTU', '18 BTU'),
+#     ('24 BTU', '24 BTU'),
+# )
 
 CONDITIONER_TYPE_CHOICES = (
     ('Настінні спліт-системи', 'Настінні спліт-системи'),
@@ -45,6 +45,7 @@ BRAND_CHOICES = (
     ('Mitsubishi Heavy', 'Mitsubishi Heavy'),
     ('Neoclima', 'Neoclima'),
     ('Olmo', 'Olmo'),
+    ('Osaka', 'Osaka'),
     ('Panasonic', 'Panasonic'),
     ('Samsung', 'Samsung'),
     ('Smartway', 'Smartway'),

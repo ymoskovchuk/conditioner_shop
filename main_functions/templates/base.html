@@ -3,45 +3,30 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Ріпка-клімат.ком</title>
+        <title>РІПКА КЛІМАТ</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="../../media/1135215.ico" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+
+
     </head>
     <body>
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
-            <div class="container">
-                <a class="navbar-brand" href="media/1135215.ico">LOGO</a>
+            <div class="container-fluid" style="height: 50px">
+
+                <a class="navbar-brand" href="/">
+                <img src="../media/logo_ripka.png" alt="">
+                </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
-                    <ul class="navbar-nav ms-auto">
-                    {% if not request.user.is_authenticated %}
                     <ul class="navbar-nav">
-                        <li>
-                            <a class="nav-link" href="{% url 'login' %}">Авторизація</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" href="{% url 'registration' %}">Реєстрація</a>
-                        </li>
-                    {% endif %}
-                        <li class="nav-item">
-                            {% if request.user.is_authenticated %}
-                            <span class="navbar text">
-                            Доброго дня,
-                                <span class="badge bg-primary" style="margin-left: 5px">
-                            <a style="text-decoration: none; font-size:14px; color:white;" href="{% url 'profile' %}">
-                            {{ request.user.username }}
-                            </a>
-                            | <a style="text-decoration: none; font-size:14px; color:white; " href="{% url 'logout' %}"> Вийти </a>  {% endif %}
-                                </span>
-                            </span>
-                        </li>
-
-
                         <li class="nav-item active"><a class="nav-link" href="/">Головна</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="/category/conditioners" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,26 +44,48 @@
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="/category/invertors" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="category/conditioners/?invertor=Так" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Інверторні
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                              <a class="dropdown-item active" href="/category/invertors">Усі інверторні</a>
+                              <a class="dropdown-item active" href="category/conditioners/?invertor=Так">Усі інверторні</a>
                                 <div class="dropdown-divider"></div>
-                              <a class="dropdown-item" href="/category/invertors/?brand=&producer=&recommended_area=&conditioner_type=&invertor_power=7+BTU">Інверторні 7 BTU</a>
-                              <a class="dropdown-item" href="/category/invertors/?brand=&producer=&recommended_area=&conditioner_type=&invertor_power=9+BTU">Інверторні 9 BTU</a>
-                              <a class="dropdown-item" href="/category/invertors/?brand=&producer=&recommended_area=&conditioner_type=&invertor_power=12+BTU">Інверторні 12 BTU</a>
-                              <a class="dropdown-item" href="/category/invertors/?brand=&producer=&recommended_area=&conditioner_type=&invertor_power=18+BTU">Інверторні 18 BTU</a>
-                              <a class="dropdown-item" href="/category/invertors/?brand=&producer=&recommended_area=&conditioner_type=&invertor_power=24+BTU">Інверторні 24 BTU</a>
+                              <a class="dropdown-item" href="/category/conditioners/?recommended_area=до+20&invertor=Так">До 20 м²</a>
+                              <a class="dropdown-item" href="/category/conditioners/?recommended_area=до+25&invertor=Так">До 25 м²</a>
+                              <a class="dropdown-item" href="/category/conditioners/?recommended_area=до+35&invertor=Так">До 35 м²</a>
+                              <a class="dropdown-item" href="/category/conditioners/?recommended_area=до+45&invertor=Так">До 45 м²</a>
+                              <a class="dropdown-item" href="/category/conditioners/?recommended_area=до+50&invertor=Так">До 50 м²</a>
+                              <a class="dropdown-item" href="/category/conditioners/?recommended_area=до+60&invertor=Так">До 60 м²</a>
+                              <a class="dropdown-item" href="/category/conditioners/?recommended_area=до+70&invertor=Так">До 70 м²</a>
+                              <a class="dropdown-item" href="/category/conditioners/?recommended_area=>+70&invertor=Так">Більше 70 м²</a>
                             </div>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="/installation">Установка</a></li>
                         <li class="nav-item"><a class="nav-link" href="/payment_delivery">Оплата та доставка</a></li>
                         <li class="nav-item"><a class="nav-link" href="/service">Сервіс</a></li>
                         <li class="nav-item"><a class="nav-link" href="/contacts">Контакти</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{% url 'cart' %}"> Корзина: <span class="badge bg-pill bg-danger">{{ cart.products.count }}</span></a>
                     </ul>
                     <ul class="navbar-nav ms-auto">
+                        {% if not request.user.is_authenticated %}
+                        <li>
+                            <a class="nav-link" href="{% url 'login' %}">Авторизація</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{% url 'registration' %}">Реєстрація</a>
+                        </li>
+                        {% endif %}
+                        <li class="nav-item">
+                            {% if request.user.is_authenticated %}
+                            <span class="navbar text">
+                                <span class="badge bg-primary" style="margin-left: 5px">
+                            <a style="text-decoration: none; font-size:14px; color:white;" href="{% url 'profile' %}">
+                            {{ request.user.username }}
+                            </a>
+                            | <a style="text-decoration: none; font-size:14px; color:white; " href="{% url 'logout' %}"> Вийти </a>  {% endif %}
+                                </span>
+                            </span>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="{% url 'cart' %}"> Корзина: <span class="badge bg-pill bg-danger">{{ cart.products.count }}</span></a>
                     </ul>
                 </div>
             </div>
@@ -86,8 +93,12 @@
         <!-- Page Content-->
 
 <div class="container">
-    <h5 class="text-end mt-3">Є запитання? Ми зателефонуємо</h5>
+<!--    <h5 class="text-end mt-3" style="">Є запитання? Ми зателефонуємо</h5>-->
+
     <div class="col-lg-4 col-md-4 mb-2 ms-auto">
+        <div class="d-grid gap-2">
+        <button class="btn btn-light btn-lg mt-2" style="background-color: #e3f2fd;">Є запитання? Ми зателефонуємо</button>
+        </div>
         <form action="{% url 'callback' %}", method="post"> {% csrf_token %}
           <div class="input-group mb-2 mt-2">
             <div class="input-group-prepend">
@@ -100,11 +111,8 @@
     </div>
 </div>
 
-
-
 {% block content %}
         <div class="container">
-
                     {% if messages %}
                     {% for message in messages %}
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -146,7 +154,11 @@
                                         <a href="{{ product.get_absolute_url }}">{{ product.title }}</a></h4>
                                     <h5>{{ product.price }} грн.</h5>
                                     <a href="{% url 'add_to_cart' slug=product.slug %}">
+                                        {% if not request.user.is_authenticated %}
+                                        <button class="btn btn-danger"><a href="/registration" style="color: white"> В корзину </a></button>
+                                        {% else %}
                                         <button class="btn btn-danger">В корзину</button>
+                                        {% endif %}
                                     </a>
                                 </div>
                             </div>
