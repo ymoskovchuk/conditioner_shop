@@ -31,7 +31,6 @@ else:
     ALLOWED_HOSTS = ['185.233.37.73', 'xn----7sbb1bcghsi2a5sg.com', 'localhost', '127.0.0.1']
 
 
-
 # Application definition
 
 INSTALLED_APPS = [
