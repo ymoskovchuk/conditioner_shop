@@ -2,73 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5b041636-d38e-4379-aefd-c63488ad0231" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/FETCH_HEAD" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cond_shop/settings.py.save" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/error.log" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/31-600x600.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Gree-Bora.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/PanasTZ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/S07XN7-600x600.jpg1" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/nordik-600x600.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/nordik-600x600_ib7pnmk.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/ras-b10j2kvrg-e-ras-b10j2avrg-e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Митсубиси-дизайн-блек.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова_1vMtidL.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова_62xRChG.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова_GxUMack.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова_Og5vJ4V.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова_Rdw5g9i.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова_VJ5O7R5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова_VO8hO1Y.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова_WiIhOru.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/Олмо-Иннова_iA2AZQA.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/альфа.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/альфа_NDD00wY.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/альфа_duJA97Q.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/альфа_h9gxHqB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/альфа_yclWInp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/арктік.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/арктік_1745aU7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/арктік_TVKfzet.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/арктік_VW2eE1R.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/аір.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/аір_7nc7a69.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/аір_uK9QJbL.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вінер.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вінер_AWqr0PQ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вінер_HUjmObh.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вінер_Qxpg6gJ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вінер_tcFuz76.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вітал.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вітал_1JQXtBB.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вітал_Fja0TzJ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вітал_bFeq8CT.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/вітал_yKA2n30.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/грыы_фее.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/купе_9-_ка_неін.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/купе_9-_ка_неін_Znwsu4A.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/купе_9-_ка_неін_pws6mxa.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/купе_9-_ка_неін_w1bEmG9.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/купер_мульт_14.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/купер_мульт_14_NHeSrNp.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/купер_мульт_14_WN4IWbX.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_неінв.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_неінв_ZP7117M.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_неінв_lg6Tlzc.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_неінв_xcwVcv7.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_інв.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_інв_2ywgWtF.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_інв_9GVb3iu.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_інв_aK2cf0L.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_інв_jk3v2yJ.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/осака_інв_wlBDqGg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/media/тошиба.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cond_shop/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/cond_shop/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_functions/templates/installation.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_functions/templates/installation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main_functions/templates/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/main_functions/templates/service.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,6 +10,11 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1wmEYWaJYJiIg8aoRGYRoShqmLl" />
@@ -102,13 +41,13 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1420" y="533" key="#com.intellij.tools.ToolEditorDialog" timestamp="1632151556175">
+    <state x="918" y="461" key="MultipleFileMergeDialog" timestamp="1641840605107">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1420" y="533" key="#com.intellij.tools.ToolEditorDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1632151556175" />
-    <state x="1153" y="348" key="SettingsEditor" timestamp="1632153781702">
+    <state x="918" y="461" key="MultipleFileMergeDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1641840605107" />
+    <state x="92" y="92" width="2376" height="1216" key="ShowDiffWithBranchDialog" timestamp="1641840948939">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1153" y="348" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1632153781702" />
+    <state x="92" y="92" width="2376" height="1216" key="ShowDiffWithBranchDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1641840948939" />
   </component>
 </project>
